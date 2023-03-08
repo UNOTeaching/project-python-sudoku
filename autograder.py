@@ -174,7 +174,7 @@ question6 = QuestionALL(
 )
 
 questionALL = QuestionALL(
-    name="questionALL",
+    name="question ALL",
     questions=[question1, question2, question3, question4, question5, question6],
     display_name="All questions",
 )
