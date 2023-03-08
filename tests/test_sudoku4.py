@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 import unittest
 import json
 
@@ -39,7 +40,7 @@ class TestSudoku(unittest.TestCase):
     def test_sudoku(self):
         for file in os.listdir(INSTANCES):
             file_name = os.path.splitext(os.path.basename(file))[0]
-            output = get_answer(["python", "sudoku4.py", f"{INSTANCES}/{file}"])
+            output = get_answer([sys.executable, "sudoku4.py", f"{INSTANCES}/{file}"])
             solutions = get_solutions(file_name)
             self.assertEqual(len(output), 1, file_name)
             for answer in output:
