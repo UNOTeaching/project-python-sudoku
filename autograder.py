@@ -184,7 +184,7 @@ questions = questionALL.subquestions()
 
 
 def dispatch_question(args):
-    question_name = f"question{args.question}"
+    question_name = f"question {args.question}"
     if question_name in questions:
         return questions[question_name]
     else:
@@ -193,7 +193,7 @@ def dispatch_question(args):
 
 def parse():
     parser = argparse.ArgumentParser(description="Test Grounder")
-    question_choices = [q.removeprefix("question") for q in questions.keys()]
+    question_choices = [q.removeprefix("question ") for q in questions.keys()]
     parser.add_argument(
         "--question",
         metavar="N",
