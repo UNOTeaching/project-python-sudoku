@@ -368,7 +368,7 @@ You can check your implementation by running the following command:
 python autograder.py --question=6b
 ```
 
-You can check all your progres by simply running the following command:
+You can check all your progress by simply running the following command:
 ```bash
 python autograder.py
 ```
