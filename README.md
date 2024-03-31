@@ -253,7 +253,7 @@ python autograder.py --question=3
 ## Question 4: Solving and printing Sudokus (30 points)
 
 We will now build the second iteration of the sudoku solver. This solver reads the input board in the format of Project 1 and output the solution in the same illustrated above.
-Create a file called ```solver4.py``` by copying ```solver1.py``` and modify it to print the required format.
+Create a file called ```sudoku4.py``` by copying ```sudoku1.py``` and modify it to print the required format.
 
 <!-- For instance, the above input sudoku is represented by the following facts.
 ```
@@ -270,7 +270,7 @@ initial(9,5,8). initial(9,8,7). initial(9,9,9).
 ``` -->
 Running the command
 ```bash
-$python solver-lp.py 0 instances/lp/ex00.lp 
+$python sudoku4.py 0 instances/lp/ex00.lp 
 ```
 should produce an output similar to the following:
 ```bash
@@ -376,4 +376,4 @@ If you obtained 100 points, you are done. Congratulations!
 
 ## Submission recall
 
-**Remember to commit and push your code to your GitHub repository**. The content of the main branch of your GitHub repository at the time of the deadline will be considered your submission. Any modifications after deadline will be ignored. So will be any previous code that you committed before. Note that **the autograder will give you the evaluation of your last commit, so be sure that it is what you expect**.
+**Remember to commit and push your code to your GitHub repository**. The content of the main branch of your GitHub repository at the time of the deadline will be considered your submission. Any modifications after the due date will be ignored. So will be any previous code that you committed before. Note that **the autograder will give you the evaluation of your last commit, so be sure that it is what you expect**.
