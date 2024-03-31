@@ -17,21 +17,21 @@ Input:                                               Output:
 The dash symbol "```-```" is used to represent that in a position there is no number.
 
 ## Formalities.
-You can work on the solution alone or in groups of two people. Different groups have to submit different solutions. In case of plagiarism all groups involved will fail the project.
+You can work on the solution alone or in groups of two people. Different groups have to submit different solutions. In case of plagiarism, all groups involved will fail the project.
 
 Your code will be autograded for technical correctness. However, the correctness of your implementation -- not the autograder's judgments -- will be the final judge of your score. If necessary, we will review and grade assignments individually to ensure that you receive due credit for your work.
 
-The content of the **main** branch of your GitHub repository at the time of the deadline will be considered your submission. Any modifications after deadline will be ignored. So will be any previous code that you committed before. Note that the autograder will give you the evaluation of your last commit, so be sure that it is what you expect.
+The content of the **main** branch of your GitHub repository at the time of the due date will be considered your submission. Any modifications after the due date will be ignored. So will be any previous code that you committed before. Note that the autograder will give you the evaluation of your last commit, so be sure that it is what you expect.
 
 **Start as soon as possible to avoid running out of time.**
 
-Do not modify the file ```autograder.py``` nor any of the content of the directories ```.git```, ```.github``` and  ```tests```. Modifying some of this directories may prevent your code to work or cause lost of your progress.
+Do not modify the file ```autograder.py``` nor any of the content of the directories ```.git```, ```.github``` and  ```tests```. Modifying some of these directories may prevent your code from working or cause a loss of your progress.
 
-**Academic Dishonesty**: We will be checking your code against other submissions in the class for logical redundancy. If you copy someone else's code and submit it with minor changes, we will know. These cheat detectors are quite hard to fool, so please don't try. Modifying the behavior of the autograder in any way is also cheating. We trust you all to submit your own work only and to do it in honest way; please don't let us down. If you do, we will pursue the strongest consequences available to us.
+**Academic Dishonesty**: We will be checking your code against other submissions in the class for logical redundancy. If you copy someone else's code and submit it with minor changes, we will know. These cheat detectors are quite hard to fool, so please don't try. Modifying the behavior of the autograder in any way is also cheating. We trust you all to submit your own work only and to do it honestly; please don't let us down. If you do, we will pursue the strongest consequences available to us.
 
 ## Framework
 
-This project requires Python 3.9 and the ```clingo``` Python package with a version 5.6.2. You can check your installation by running the following commands:
+This project requires Python 3.9 and the ```clingo``` Python package with version 5.6.2. You can check your installation by running the following commands:
 ```bash
 python --version
 python -c "import clingo; print(clingo.__version__)"
@@ -41,7 +41,7 @@ If you are missing the ```clingo``` package, you can install it with ```pip```:
 python -m pip install clingo==5.6.2
 ```
 
-Start by cloning this repository and add a file named ```group.txt``` containing the names of each of the members of the group. Each name should be in a separate line. Recall that without this file, we many not be able to identify your repository as yours.
+Start by cloning this repository and add a file named ```group.txt``` containing the names of each of the members of the group. Each name should be in a separate line. Recall that without this file, we may not be able to identify your repository as yours.
 The autograder in GitHub will give you no grade in that case.
 
 The framework is composed of the following files:
@@ -54,7 +54,7 @@ The framework is composed of the following files:
 
 Do not modify any file besides ```sudoku.py```. Modifying other files may cause the autograder to fail. You can add new files if you want.
 
-We recommend that you create new commits frequently when doing this project. If at some point you realize you did a mistake, you can revert to a previous commit. Pushing to the GitHub repository may also help you in case that you accidentally lose your local copy. If you have doubts about Git or Github, or you wanto learn more about it, then you can read the tutorial in following link:
+We recommend that you create new commits frequently when doing this project. If at some point you realize you made a mistake, you can revert to a previous commit. Pushing to the GitHub repository may also help you in case you accidentally lose your local copy. If you have doubts about Git or Github, or you want to learn more about it, then you can read the tutorial at the following link:
 
 https://github.com/Advanced-Concepts-Programming-Languages/github-starter-course
 
@@ -62,7 +62,7 @@ https://github.com/Advanced-Concepts-Programming-Languages/github-starter-course
 
 ## Question 1: A Sudoku Solver
 
-We start by creating a Soduku solver that uses the same input and output fortmat that we used in the first project. The first difference with respect to the first project is our new solver only will receive only one file containing the input. For instance, by running the following command
+We start by creating a Soduku solver that uses the same input and output format that we used in the first project. The first difference concerning the first project is that our new solver will receive only one file containing the input. For instance, by running the following command
 ```bash
 python sudoku1.py instances/lp/ex00.lp
 ```
@@ -86,7 +86,7 @@ clingo sudoku.lp instances/lp/ex00.lp
 ```
 where ```sudoku.lp``` is the file that contains the encoding of the sudoku problem.
 
-The content of ```ex00.lp``` is the partically filled sudoky board shown above and described as facts:
+The content of ```ex00.lp``` is the partially filled sudoku board shown above and described as facts:
 ```
 %%file instances/lp/ex00.lp
 initial(1,1,5). initial(1,2,3). initial(1,5,7).
@@ -102,7 +102,7 @@ initial(9,5,8). initial(9,8,7). initial(9,9,9).
 
 ### Question 1a: A Sudoku Solver (10 points)
 
-You should implement this solver using the ```clingo.ClingoApp``` class. This will allow us to use all the features of the clingo command line interface. For instance, we can use the option ```--outf=2``` to print the output in ```json``` format. For instance, by running the following command
+You should implement this solver using the ```clingo.ClingoApp``` class. This will allow us to use all the features of the ```clingo``` command line interface. For instance, we can use the option ```--outf=2``` to print the output in ```json``` format. For instance, by running the following command
 ```bash
 python sudoku1.py instances/lp/ex00.lp --outf=2
 ```
@@ -139,7 +139,7 @@ we obtain the output
   }
 }
 ```
-Once you have implement the solver, you can run the autograder to check if your solution is correct. To do so, run the following command
+Once you have implemented the solver, you can run the autograder to check if your solution is correct. To do so, run the following command
 ```bash
 python autograder.py --question=1a
 ```
@@ -153,7 +153,7 @@ python autograder.py --question=1b
 ## Question 2: Parsing models (10 points)
 
 We will now parse a ```clingo.solving.Model``` object into a ```Sudoku``` object.
-Please check the api documentation for details of this class (https://potassco.org/clingo/python-api/current/clingo/solving.html#clingo.solving.Model). You should write your implementation in the method 
+Please check the API documentation for details of this class (https://potassco.org/clingo/python-api/current/clingo/solving.html#clingo.solving.Model). You should write your implementation in the method 
 ```python
    @classmethod
    def from_model(cls, model: clingo.solving.Model) -> 'Sudoku':
@@ -163,7 +163,7 @@ Please check the api documentation for details of this class (https://potassco.o
 ```
 of the class ```Sudoku```. You can find this class in the file ```sudoku_board.py```. This method takes a ```clingo.solving.Model``` object as input and returns a ```Sudoku``` object. You can assume that the input ```clingo.solving.Model``` object represents a valid sudoku solution.
 
-Method ```model.symbols(shown=True)``` returns a list of ```clingo.Symbol``` objects that represent the atoms in the model as they will be printed by clingo.
+Method ```model.symbols(shown=True)``` returns a list of ```clingo.Symbol``` objects that represent the atoms in the model as they will be printed by ```clingo```.
 For instance, if the model contains facts
 ```
 sudoku(1,1,6) sudoku(1,2,1) sudoku(1,3,7) sudoku(1,4,5) sudoku(1,5,4) sudoku(1,6,9) sudoku(1,7,2) sudoku(1,8,8) sudoku(1,9,3).
@@ -176,7 +176,7 @@ sudoku(7,1,3) sudoku(7,2,6) sudoku(7,3,5) sudoku(7,4,9) sudoku(7,5,7) sudoku(7,6
 sudoku(8,1,8) sudoku(8,2,4) sudoku(8,3,9) sudoku(8,4,6) sudoku(8,5,5) sudoku(8,6,1) sudoku(8,7,7) sudoku(8,8,3) sudoku(8,9,2).
 sudoku(9,1,1) sudoku(9,2,7) sudoku(9,3,2) sudoku(9,4,4) sudoku(9,5,8) sudoku(9,6,3) sudoku(9,7,9) sudoku(9,8,5) sudoku(9,9,6)
 ```
-representing the solution displayed in the begining of this page, then the attribute ```board``` should contain the follwoing dictionary
+representing the solution displayed at the begining of this page, then the attribute ```board``` should contain the following dictionary
 ```python
 {
    (1, 1): 5, (1, 2): 3, (1, 3): 4, (1, 4): 6, (1, 5): 7, (1, 6): 8, (1, 7): 9, (1, 8): 1, (1, 9): 2,
@@ -206,7 +206,7 @@ python autograder.py --question=2
 
 ## Question 3: Formating Sudokus (10 points)
 
-Start by filling the method 
+Start by filling in the method 
 ```python
 def __str__(self) -> str:
    s = ""
@@ -227,7 +227,7 @@ in the class ```Sudoku```. This method should return a string that represents th
        self.board = board
 ```
 The keys of the dictionary are tuples of two integers that represent the position of a cell in the sudoku. The first integer is the row and the second integer is the column. The values of the dictionary are integers that represent the number in the cell. Cells, rows and values are represented by numbers between ```1``` and ```9```.
-For instance the output sudoku above is represented by the following dictionary:
+For instance, the output sudoku above is represented by the following dictionary:
 ```python
 {
    (1, 1): 5, (1, 2): 3, (1, 3): 4, (1, 4): 6, (1, 5): 7, (1, 6): 8, (1, 7): 9, (1, 8): 1, (1, 9): 2,
@@ -252,7 +252,7 @@ python autograder.py --question=3
 
 ## Question 4: Solving and printing Sudokus (30 points)
 
-We will now build the second iteration of the sudoku solver. This solver reads the input board in the format of Project 1 and output the solution in the same illustrated above.
+We will now build the second iteration of the sudoku solver. This solver reads the input board in the format of Project 1 and outputs the solution in the same illustration above.
 Create a file called ```sudoku4.py``` by copying ```sudoku1.py``` and modify it to print the required format.
 
 <!-- For instance, the above input sudoku is represented by the following facts.
@@ -296,7 +296,7 @@ Calls        : 1
 Time         : 0.014s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
 CPU Time     : 0.014s
 ```
-We can use the parsing and formating functions that we develop in the previous questions. The only thing that we need to do is to modify the solver to output the solution in the required format. You can check your implementation by running
+We can use the parsing and formatting functions that we developed in the previous questions. The only thing that we need to do is to modify the solver to output the solution in the required format. You can check your implementation by running
 ```bash
 python autograder.py --question=4
 ```
@@ -312,9 +312,9 @@ Fill now the class method
       #YOUR CODE HERE
       return cls(sudoku)
 ```
-in the class ```Sudoku```. This method takes as argument a string, parses it and  returns a ```Sudoku``` object that represents the sudoku in the string ```s```. Internally this ```Sudoku``` object should have its attribute ```board``` filled appropriately. For each cell in the sudoku that has a value, the dictionary should contain an entry with the position of the cell as key and the value of the cell as value. Please check [Question 2](#question-2-parsing-models-10-points) for more details about the format.
+in the class ```Sudoku```. This method takes as its argument a string, parses it and returns a ```Sudoku``` object that represents the sudoku in the string ```s```. Internally this ```Sudoku``` object should have its attribute ```board``` filled appropriately. For each cell in the sudoku that has a value, the dictionary should contain an entry with the position of the cell as the key and the value of the cell as the value. Please check [Question 2](#question-2-parsing-models-10-points) for more details about the format.
 There should not be entries for cells that contain no value.
-For instance, for the input at this begining of the page, we obtain the dictionary object:
+For instance, for the input at the beginning of the page, we obtain the dictionary object:
 ```python
 {
    (1, 1): 5, (1, 2): 3, (1, 5): 7, 
@@ -328,20 +328,19 @@ For instance, for the input at this begining of the page, we obtain the dictiona
    (9, 5): 8, (9, 8): 7, (9, 9): 9
 }
 ```
-The input format is similar as the one used in the method ```__str__``` with an important difference. Each cell may contain either a number of a dash symbol "```-```", which is used to represent that in a position there is no number.
+The input format is similar to the one used in the method ```__str__``` with an important difference. Each cell may contain either a number or a dash symbol "```-```", which is used to represent that in a position there is no number.
 You can check your implementation by running
 ```
 python autograder.py --question=5
 ```
 
 
-## Question 6: Solving Sudokus with custum input (20 points)
+## Question 6: Solving Sudokus with custom input (20 points)
 
-We will now build the third iteration of the sudoku solver. This solver reads the input board in the format specified in the previous question and output the solution in the same format illustrated above. Create a file called ```sudoku6.py``` by copying ```sudoku4.py```. We will modify it to read the input in the required format.
+We will now build the third iteration of the sudoku solver. This solver reads the input board in the format specified in the previous question and outputs the solution in the same format illustrated above. Create a file called ```sudoku6.py``` by copying ```sudoku4.py```. We will modify it to read the input in the required format.
 
 ### Question 6a: The Context Class (10 points)
-
-We star by creating a class ```Context``` in the file ```sudoku6.py```.
+We start by creating a class ```Context``` in the file ```sudoku6.py```.
 ```python
 class Context:
 
@@ -352,8 +351,8 @@ class Context:
         # YOUR CODE HERE
 ```
 This class should have a method ```initial``` that returns a ```list``` of ```clingo.Symbol``` objects representing the initial state of the board.
-Check the lecture slides for more detail on how to construct this list.
-This initiall state of the board is provided as a ```Sudoku``` object at the creation time of the ```Context``` object. 
+Check the lecture slides for more details on how to construct this list.
+This initial state of the board is provided as a ```Sudoku``` object at the creation time of the ```Context``` object. 
 
 You can check your implementation by running the following command:
 ```bash
