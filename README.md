@@ -52,7 +52,7 @@ The framework is composed of the following files:
 
 
 
-Do not modify any file besides ```sudoku.py```. Modifying other files may cause the autograder to fail. You can add new files if you want.
+Do not modify any existing files. Modifying any files may cause the autograder to fail. You can add new files if you want.
 
 We recommend that you create new commits frequently when doing this project. If at some point you realize you made a mistake, you can revert to a previous commit. Pushing to the GitHub repository may also help you in case you accidentally lose your local copy. If you have doubts about Git or Github, or you want to learn more about it, then you can read the tutorial at the following link:
 
