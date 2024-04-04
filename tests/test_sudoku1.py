@@ -10,8 +10,8 @@ SOLUTIONS = "./solutions/q01"
 
 
 def get_answer(command_line, sorted=True):
-    output = subprocess.check_output(command_line)
-    output_lines = output.decode("utf-8").strip().splitlines()
+    output = subprocess.check_output(command_line, text=True, bufsize=1)
+    output_lines = output.strip().splitlines()
     is_model = False
     for line in output_lines:
         if is_model:
@@ -27,8 +27,8 @@ def get_answer(command_line, sorted=True):
 
 def get_answer_json(command_line, sorted=True):
     command_line.append("--outf=2")
-    output = subprocess.check_output(command_line)
-    output_json = json.loads(output.decode("utf-8"))
+    output = subprocess.check_output(command_line, text=True, bufsize=1)
+    output_json = json.loads(output)
     answers = set()
     for v in output_json["Call"][0]["Witnesses"]:
         answer = v["Value"]
@@ -53,10 +53,10 @@ class TestSudokuUnsorted(unittest.TestCase):
     def test_sudoku(self):
         for file in os.listdir(INSTANCES):
             file_name = os.path.splitext(os.path.basename(file))[0]
-            output = get_answer([sys.executable, "-u", "sudoku1.py", f"{INSTANCES}/{file}"])
+            output = get_answer([sys.executable, "sudoku1.py", f"{INSTANCES}/{file}"])
             solutions = get_solutions(file_name)
             self.assertIn(output, solutions)
-            output = get_answer_json([sys.executable, "-u", "sudoku1.py", f"{INSTANCES}/{file}"])
+            output = get_answer_json([sys.executable, "sudoku1.py", f"{INSTANCES}/{file}"])
             self.assertEqual(len(output), 1, file_name)
             for answer in output:
                 self.assertIn(answer, solutions)
@@ -67,7 +67,7 @@ class TestSudokuSorted(unittest.TestCase):
         for file in os.listdir(INSTANCES):
             file_name = os.path.splitext(os.path.basename(file))[0]
             output = get_answer(
-                [sys.executable, "-u", "sudoku1.py", f"{INSTANCES}/{file}"], sorted=False
+                [sys.executable, "sudoku1.py", f"{INSTANCES}/{file}"], sorted=False
             )
             solutions = get_solutions(file_name)
             self.assertIn(output, solutions)
