@@ -13,6 +13,7 @@ def parse_answers(text):
     answers = []
     answer = []
     for line in text.strip().splitlines():
+        line = line.strip()
         if line == "":
             continue
         if is_model and len(answer) < 9:
