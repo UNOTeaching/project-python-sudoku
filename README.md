@@ -163,7 +163,7 @@ Please check the API documentation for details of this class (https://potassco.o
 ```
 of the class ```Sudoku```. You can find this class in the file ```sudoku_board.py```. This method takes a ```clingo.solving.Model``` object as input and returns a ```Sudoku``` object. You can assume that the input ```clingo.solving.Model``` object represents a valid sudoku solution.
 
-Method ```model.symbols(shown=True)``` returns a list of ```clingo.Symbol``` objects that represent the atoms in the model as they will be printed by ```clingo```.
+Method ```model.symbols(shown=True)``` returns a list of ```clingo.symbol.Symbol``` objects that represent the atoms in the model as they will be printed by ```clingo```.
 For instance, if the model contains facts
 ```
 sudoku(1,1,6) sudoku(1,2,1) sudoku(1,3,7) sudoku(1,4,5) sudoku(1,5,4) sudoku(1,6,9) sudoku(1,7,2) sudoku(1,8,8) sudoku(1,9,3).
@@ -347,10 +347,10 @@ class Context:
     def __init__(self, board: Sudoku):
         # YOUR CODE HERE
         
-    def initial(self) -> list[clingo.Symbol]:
+    def initial(self) -> list[clingo.symbol.Symbol]:
         # YOUR CODE HERE
 ```
-This class should have a method ```initial``` that returns a ```list``` of ```clingo.Symbol``` objects representing the initial state of the board.
+This class should have a method ```initial``` that returns a ```list``` of ```clingo.symbol.Symbol``` objects that represent the initial state of the board.
 Check the lecture slides for more details on how to construct this list.
 This initial state of the board is provided as a ```Sudoku``` object at the creation time of the ```Context``` object. 
 
