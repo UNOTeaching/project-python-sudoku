@@ -53,10 +53,10 @@ class TestSudokuUnsorted(unittest.TestCase):
     def test_sudoku(self):
         for file in os.listdir(INSTANCES):
             file_name = os.path.splitext(os.path.basename(file))[0]
-            output = get_answer([sys.executable, "sudoku1.py", f"{INSTANCES}/{file}"])
+            output = get_answer([sys.executable, "-u", "sudoku1.py", f"{INSTANCES}/{file}"])
             solutions = get_solutions(file_name)
             self.assertIn(output, solutions)
-            output = get_answer_json([sys.executable, "sudoku1.py", f"{INSTANCES}/{file}"])
+            output = get_answer_json([sys.executable, "-u", "sudoku1.py", f"{INSTANCES}/{file}"])
             self.assertEqual(len(output), 1, file_name)
             for answer in output:
                 self.assertIn(answer, solutions)
@@ -67,7 +67,7 @@ class TestSudokuSorted(unittest.TestCase):
         for file in os.listdir(INSTANCES):
             file_name = os.path.splitext(os.path.basename(file))[0]
             output = get_answer(
-                [sys.executable, "sudoku1.py", f"{INSTANCES}/{file}"], sorted=False
+                [sys.executable, "-u", "sudoku1.py", f"{INSTANCES}/{file}"], sorted=False
             )
             solutions = get_solutions(file_name)
             self.assertIn(output, solutions)

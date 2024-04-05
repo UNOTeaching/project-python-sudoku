@@ -36,7 +36,7 @@ class TestSudoku46(unittest.TestCase):
     def helper_test_sudoku(self, instances_path, solutions_path, executable_path):
         for file in os.listdir(instances_path):
             file_name = os.path.splitext(os.path.basename(file))[0]
-            output = get_answer([sys.executable, executable_path, os.path.join(instances_path, file)])
+            output = get_answer([sys.executable, "-u", executable_path, os.path.join(instances_path, file)])
             solutions = get_solutions(solutions_path, file_name)
             self.assertEqual(len(output), 1, file_name)
             for answer in output:
