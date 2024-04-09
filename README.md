@@ -176,14 +176,14 @@ sudoku(7,1,3) sudoku(7,2,6) sudoku(7,3,5) sudoku(7,4,9) sudoku(7,5,7) sudoku(7,6
 sudoku(8,1,8) sudoku(8,2,4) sudoku(8,3,9) sudoku(8,4,6) sudoku(8,5,5) sudoku(8,6,1) sudoku(8,7,7) sudoku(8,8,3) sudoku(8,9,2).
 sudoku(9,1,1) sudoku(9,2,7) sudoku(9,3,2) sudoku(9,4,4) sudoku(9,5,8) sudoku(9,6,3) sudoku(9,7,9) sudoku(9,8,5) sudoku(9,9,6)
 ```
-representing the solution displayed at the begining of this page, then the attribute ```board``` should contain the following dictionary
+representing the solution displayed at the beginning of this page, then the attribute ```board``` should contain the following dictionary
 ```python
 {
    (1, 1): 5, (1, 2): 3, (1, 3): 4, (1, 4): 6, (1, 5): 7, (1, 6): 8, (1, 7): 9, (1, 8): 1, (1, 9): 2,
    (2, 1): 6, (2, 2): 7, (2, 3): 2, (2, 4): 1, (2, 5): 9, (2, 6): 5, (2, 7): 3, (2, 8): 4, (2, 9): 8, 
    (3, 1): 1, (3, 2): 9, (3, 3): 8, (3, 4): 3, (3, 5): 4, (3, 6): 2, (3, 7): 5, (3, 8): 6, (3, 9): 7,
    (4, 1): 8, (4, 2): 5, (4, 3): 9, (4, 4): 7, (4, 5): 6, (4, 6): 1, (4, 7): 4, (4, 8): 2, (4, 9): 3, 
-   (5, 1): 4, (5, 2): 2, (5, 3): 6, (5, 4): 8, (5, 5): 5, (5, 6): 3, (5, 7): 7,  (5, 8): 9 (5, 9): 1, 
+   (5, 1): 4, (5, 2): 2, (5, 3): 6, (5, 4): 8, (5, 5): 5, (5, 6): 3, (5, 7): 7, (5, 8): 9, (5, 9): 1, 
    (6, 1): 7, (6, 2): 1, (6, 3): 3, (6, 4): 9, (6, 5): 2, (6, 6): 4, (6, 7): 8, (6, 8): 5, (6, 9): 6, 
    (7, 1): 9, (7, 2): 6, (7, 3): 1, (7, 4): 5, (7, 5): 3, (7, 6): 7, (7, 7): 2, (7, 8): 8, (7, 9): 4, 
    (8, 1): 2, (8, 2): 8, (8, 3): 7, (8, 4): 4, (8, 5): 1, (8, 6): 9, (8, 7): 6, (8, 8): 3, (8, 9): 5, 
@@ -221,26 +221,34 @@ in the class ```Sudoku```. This method should return a string that represents th
    - there should be one blank space between two numbers that belong to the same block,
    - there should be two blank spaces between two numbers that belong to different blocks.
 
-<!-- Internally, the sudoku is represented by a dictionary stored in the attribute ```board``` that maps each position to its value:
-```python
-   def __init__(self, board: dict[(int, int), int]):
-       self.board = board
-```
-The keys of the dictionary are tuples of two integers that represent the position of a cell in the sudoku. The first integer is the row and the second integer is the column. The values of the dictionary are integers that represent the number in the cell. Cells, rows and values are represented by numbers between ```1``` and ```9```.
-For instance, the output sudoku above is represented by the following dictionary:
+For instance, if the attribute ```board``` of the ```Sudoku``` object is the dictionary
 ```python
 {
    (1, 1): 5, (1, 2): 3, (1, 3): 4, (1, 4): 6, (1, 5): 7, (1, 6): 8, (1, 7): 9, (1, 8): 1, (1, 9): 2,
    (2, 1): 6, (2, 2): 7, (2, 3): 2, (2, 4): 1, (2, 5): 9, (2, 6): 5, (2, 7): 3, (2, 8): 4, (2, 9): 8, 
    (3, 1): 1, (3, 2): 9, (3, 3): 8, (3, 4): 3, (3, 5): 4, (3, 6): 2, (3, 7): 5, (3, 8): 6, (3, 9): 7,
    (4, 1): 8, (4, 2): 5, (4, 3): 9, (4, 4): 7, (4, 5): 6, (4, 6): 1, (4, 7): 4, (4, 8): 2, (4, 9): 3, 
-   (5, 1): 4, (5, 2): 2, (5, 3): 6, (5, 4): 8, (5, 5): 5, (5, 6): 3, (5, 7): 7,  (5, 8): 9 (5, 9): 1, 
+   (5, 1): 4, (5, 2): 2, (5, 3): 6, (5, 4): 8, (5, 5): 5, (5, 6): 3, (5, 7): 7, (5, 8): 9, (5, 9): 1, 
    (6, 1): 7, (6, 2): 1, (6, 3): 3, (6, 4): 9, (6, 5): 2, (6, 6): 4, (6, 7): 8, (6, 8): 5, (6, 9): 6, 
    (7, 1): 9, (7, 2): 6, (7, 3): 1, (7, 4): 5, (7, 5): 3, (7, 6): 7, (7, 7): 2, (7, 8): 8, (7, 9): 4, 
    (8, 1): 2, (8, 2): 8, (8, 3): 7, (8, 4): 4, (8, 5): 1, (8, 6): 9, (8, 7): 6, (8, 8): 3, (8, 9): 5, 
    (9, 1): 3, (9, 2): 4, (9, 3): 5, (9, 4): 2, (9, 5): 8, (9, 6): 6, (9, 7): 1, (9, 8): 7, (9, 9): 9, 
 }
-``` -->
+```
+the call to ```___str__()``` on this object should return the string shown as output at the beginning of this page:
+```
+5 3 4  6 7 8  9 1 2
+6 7 2  1 9 5  3 4 8
+1 9 8  3 4 2  5 6 7
+
+8 5 9  7 6 1  4 2 3
+4 2 6  8 5 3  7 9 1
+7 1 3  9 2 4  8 5 6
+
+9 6 1  5 3 7  2 8 4
+2 8 7  4 1 9  6 3 5
+3 4 5  2 8 6  1 7 9
+```
 
 You can check your implementation by running
 ```
@@ -253,7 +261,7 @@ python autograder.py --question=3
 ## Question 4: Solving and printing Sudokus (30 points)
 
 We will now build the second iteration of the sudoku solver. This solver reads the input board in the format of Project 1 and outputs the solution in the same illustration above.
-Create a file called ```sudoku4.py``` by copying ```sudoku1.py``` and modify it to print the required format.
+Create a file called ```sudoku4.py``` by copying `sudoku1.py` and modifying it to print the required format.
 
 <!-- For instance, the above input sudoku is represented by the following facts.
 ```
@@ -361,8 +369,39 @@ python autograder.py --question=6a
 
 ### Question 6b: Putting all together (10 points)
 
-It is time to put all our progress together and complete the solver. Add a file ```sudoku_py.lp``` with the bridge rules between python and the logic programming. These rules should produce facts of the form ```initial(a,b,c)``` for each cell ```(a,b)``` that has a value ```c```. This uses the method ```initial``` of the class ```Context``` to obtain the list of facts. We need to modify the file ```sudoku6.py``` to use our ```Context``` object. The lecture slides explain in more detail how to do this.
-You can check your implementation by running the following command:
+It is time to put all our progress together and complete the solver. Add a file ```sudoku_py.lp``` with the bridge rules between Python and the logic programming. These rules should produce facts of the form ```initial(a,b,c)``` for each cell ```(a,b)``` that has a value ```c```. This uses the method ```initial``` of the class ```Context``` to obtain the list of facts. We need to modify the file ```sudoku6.py``` to use our ```Context``` object. The lecture slides explain in more detail how to do this.
+
+Once you completed the solver you can run it as follows
+```bash
+python sudoku6.py instances/txt/ex00.txt 
+```
+and you should expect the following answer
+```bash
+clingo version 5.6.2
+Reading from instances/txt/ex00.txt
+Solving...
+Answer: 1
+5 3 4  6 7 8  9 1 2
+6 7 2  1 9 5  3 4 8
+1 9 8  3 4 2  5 6 7
+
+8 5 9  7 6 1  4 2 3
+4 2 6  8 5 3  7 9 1
+7 1 3  9 2 4  8 5 6
+
+9 6 1  5 3 7  2 8 4
+2 8 7  4 1 9  6 3 5
+3 4 5  2 8 6  1 7 9
+SATISFIABLE
+
+Models       : 1
+Calls        : 1
+Time         : 0.014s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
+CPU Time     : 0.014s
+```
+You can try several other examples from the directory ```instances/txt/``` to observe the behavior of your implementation.
+
+Once you are confident in your implementation, you can check it by running the following command:
 ```bash
 python autograder.py --question=6b
 ```
