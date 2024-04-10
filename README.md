@@ -260,8 +260,9 @@ python autograder.py --question=3
 
 ## Question 4: Solving and printing Sudokus (30 points)
 
-We will now build the second iteration of the sudoku solver. This solver reads the input board in the format of Project 1 and outputs the solution in the same illustration above.
+We will now build the second iteration of the sudoku solver. This solver reads the input board in the format of Project 1 and outputs the solution in the format illustrated at the top of this page.
 Create a file called ```sudoku4.py``` by copying `sudoku1.py` and modifying it to print the required format.
+
 
 <!-- For instance, the above input sudoku is represented by the following facts.
 ```
@@ -304,7 +305,9 @@ Calls        : 1
 Time         : 0.014s (Solving: 0.00s 1st Model: 0.00s Unsat: 0.00s)
 CPU Time     : 0.014s
 ```
-We can use the parsing and formatting functions that we developed in the previous questions. The only thing that we need to do is to modify the solver to output the solution in the required format. You can check your implementation by running
+We can use the formatting function that we developed in [Question 3](#Question-3:-Formating-Sudokus-(10-points)). The only thing that we need to do is to modify the solver to output the solution in the required format. 
+Recall that you have learned how to modify the format printed in [Question 1b](#Question-1b:-Sorting-the-output-(10-points)).
+You can check your implementation by running
 ```bash
 python autograder.py --question=4
 ```
