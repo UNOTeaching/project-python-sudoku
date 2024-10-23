@@ -50,7 +50,7 @@ jobs:
       with:
         test-name: 'Question 1a'
         setup-command: 'conda install python=3.9 --yes; conda install -c potassco clingo=5.7.1 --yes; conda init'
-        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --clingo /usr/share/miniconda/bin/clingo --question=1a'
+        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --question=1a'
         timeout: '10'
         max-score: '10'
     - name: Question 1b
@@ -59,7 +59,7 @@ jobs:
       with:
         test-name: 'Question 1b'
         setup-command: 'conda install python=3.9 --yes; conda install -c potassco clingo=5.7.1 --yes; conda init'
-        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --clingo /usr/share/miniconda/bin/clingo --question=1b'
+        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --question=1b'
         timeout: '10'
         max-score: '10'
     - name: Question 2
@@ -68,7 +68,7 @@ jobs:
       with:
         test-name: 'Question 2'
         setup-command: 'conda install python=3.9 --yes; conda install -c potassco clingo=5.7.1 --yes; conda init'
-        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --clingo /usr/share/miniconda/bin/clingo --question=2'
+        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --question=2'
         timeout: '10'
         max-score: '10'
     - name: Question 3
@@ -77,7 +77,7 @@ jobs:
       with:
         test-name: 'Question 3'
         setup-command: 'conda install python=3.9 --yes; conda install -c potassco clingo=5.7.1 --yes; conda init'
-        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --clingo /usr/share/miniconda/bin/clingo --question=3'
+        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --question=3'
         timeout: '10'
         max-score: '10'
     - name: Question 4
@@ -86,7 +86,7 @@ jobs:
       with:
         test-name: 'Question 4'
         setup-command: 'conda install python=3.9 --yes; conda install -c potassco clingo=5.7.1 --yes; conda init'
-        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --clingo /usr/share/miniconda/bin/clingo --question=4'
+        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --question=4'
         timeout: '10'
         max-score: '30'
     - name: Question 5
@@ -95,7 +95,7 @@ jobs:
       with:
         test-name: 'Question 5'
         setup-command: 'conda install python=3.9 --yes; conda install -c potassco clingo=5.7.1 --yes; conda init'
-        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --clingo /usr/share/miniconda/bin/clingo --question=5'
+        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --question=5'
         timeout: '10'
         max-score: '10'
     - name: Question 6a
@@ -104,7 +104,7 @@ jobs:
       with:
         test-name: 'Question 6a'
         setup-command: 'conda install python=3.9 --yes; conda install -c potassco clingo=5.7.1 --yes; conda init'
-        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --clingo /usr/share/miniconda/bin/clingo --question=6a'
+        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --question=6a'
         timeout: '10'
         max-score: '10'
     - name: Question 6b
@@ -113,7 +113,7 @@ jobs:
       with:
         test-name: 'Question 6b'
         setup-command: 'conda install python=3.9 --yes; conda install -c potassco clingo=5.7.1 --yes; conda init'
-        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --clingo /usr/share/miniconda/bin/clingo --question=6b'
+        command: 'ls group.txt && [ -s group.txt ] && /usr/share/miniconda/bin/python3.9 autograder.py --question=6b'
         timeout: '10'
         max-score: '10'
     - name: Autograding Reporter
