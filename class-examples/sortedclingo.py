@@ -22,4 +22,5 @@ class ClingoApp(Application):
             return
         ctl.solve()
 
-clingo_main(ClingoApp())
+if __name__ == "__main__":
+    clingo_main(ClingoApp())
